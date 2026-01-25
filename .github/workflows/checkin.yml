@@ -3,10 +3,11 @@ name: Checkin
 
 # 触发条件
 on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+    workflow_dispatch:
+    # 定时执行
+    schedule:
+      - cron: '0 14 * * *'
+    #   - timezone: Asia/Shanghai
 
 # 工作
 jobs:
